@@ -1,0 +1,9 @@
+//in the functions file created a hook in the footer and enqueue the JS file
+
+add_action('wp_footer', 'ds_back_to_top'); 
+function ds_back_to_top() { 
+   echo '<div id="top-btn "><a class="top-btn" href="#masthead" title=”ToTop”><span class="dashicons dashicons-arrow-up-alt2"></span></a></div>';
+    
+}
+
+wp_enqueue_script( 'top-btn-script', get_stylesheet_directory_uri() . '/js/top-btn.js', array( 'jquery' ), 1.1, true );
