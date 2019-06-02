@@ -1,0 +1,22 @@
+// JavaScript Document
+
+(function($) {
+  // Make sure JS class is added.
+  document.documentElement.className = "js";
+  // Run on page scroll.
+  $(window).scroll( function() {
+  
+  // Toggle header class after threshold point.
+    if ( $(this).scrollTop() > 100 ) {
+      $(".top-btn").addClass('sticky');
+    } else {
+      $(".top-btn").removeClass('sticky');
+    }
+  });
+  
+  $('.top-btn').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});
+})(jQuery);
